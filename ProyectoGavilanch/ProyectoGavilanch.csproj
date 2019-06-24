@@ -150,6 +150,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="diploma-mongodb-redis.pdf" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -176,6 +177,9 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Acciones\Contenido.cshtml" />
+    <Content Include="Views\Acciones\QueryString.cshtml" />
+    <Content Include="Views\Acciones\MetodoGetPost.cshtml" />
+    <Content Include="Views\Acciones\ViewBagViewData.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

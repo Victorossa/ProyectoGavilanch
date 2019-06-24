@@ -5,10 +5,12 @@ namespace ModeloDatos.Datos
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+    using System.Linq;
 
     public partial class productos
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        private BD_ProyectoGavilanchContext db = new BD_ProyectoGavilanchContext();
+
         public productos()
         {
             almacenes = new HashSet<almacenes>();
@@ -37,7 +39,24 @@ namespace ModeloDatos.Datos
 
         public virtual marcas marcas { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<almacenes> almacenes { get; set; }
+
+        public List<productos> Listar()
+        {
+            var productos = new List<productos>();
+            try
+            {
+                using (var context = new BD_ProyectoGavilanchContext { })
+                {
+                    productos = context.productos.ToList();
+                }
+            }
+            catch (Exception e)
+            {
+
+                throw new Exception(e.Message);
+            }
+            return productos;
+        }
     }
 }
