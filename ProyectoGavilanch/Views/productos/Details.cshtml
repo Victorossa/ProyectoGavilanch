@@ -1,0 +1,66 @@
+﻿@model ModeloDatos.Datos.productos
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>productos</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.gruposProductos.Nombre_Grupo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.gruposProductos.Nombre_Grupo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.marcas.NombreMarca)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.marcas.NombreMarca)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Imagen)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Imagen)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Precio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Precio)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Producto_Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

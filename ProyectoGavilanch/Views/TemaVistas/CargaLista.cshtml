@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "CargaLista";
+    var Lista = ViewBag.ListaProductos;
+}
+
+<h2>CargaLista</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th style="width:200px">Producto</th>
+            <th style="width:300px">Descripción</th>
+            <th style="width:150px">Imagen</th>
+            <th style="width:50px">Precio</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Lista)
+        {
+            <tr>
+                <td>@item.Nombre</td>
+                <td>@item.Descripcion</td>
+                <td>@item.Imagen</td>
+                <td>@item.Precio</td>
+            </tr>
+        }
+    </tbody>
+</table>

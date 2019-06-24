@@ -134,6 +134,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccionesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\productosController.cs" />
+    <Compile Include="Controllers\TemaVistasController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -180,6 +182,13 @@
     <Content Include="Views\Acciones\QueryString.cshtml" />
     <Content Include="Views\Acciones\MetodoGetPost.cshtml" />
     <Content Include="Views\Acciones\ViewBagViewData.cshtml" />
+    <Content Include="Views\productos\Create.cshtml" />
+    <Content Include="Views\productos\Delete.cshtml" />
+    <Content Include="Views\productos\Details.cshtml" />
+    <Content Include="Views\productos\Edit.cshtml" />
+    <Content Include="Views\productos\Index.cshtml" />
+    <Content Include="Views\TemaVistas\MiAction.cshtml" />
+    <Content Include="Views\TemaVistas\CargaLista.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

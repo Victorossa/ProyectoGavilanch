@@ -54,11 +54,11 @@
     <Compile Include="Datos\BD_ProyectoGavilanchContext.cs" />
     <Compile Include="Datos\gruposProductos.cs" />
     <Compile Include="Datos\marcas.cs" />
+    <Compile Include="Datos\pelicula.cs" />
     <Compile Include="Datos\productos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
