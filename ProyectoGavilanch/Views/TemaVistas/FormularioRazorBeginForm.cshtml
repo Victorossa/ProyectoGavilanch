@@ -9,6 +9,10 @@
 <body>
     @using (Html.BeginForm())
     {
+
+        @*@Html.EditorForModel();*@
+        
+        
         <div>
             @Html.LabelFor(Model => Model.Titulo):
             @Html.EditorFor(Model => Model.Titulo)

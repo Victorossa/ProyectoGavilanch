@@ -1,0 +1,12 @@
+﻿@foreach (var item in (List<ModeloDatos.Datos.productos>)ViewBag.ListaProductos)
+{
+    <div>
+        <span>@item.Nombre</span>
+    </div>
+}
+
+<br />
+<br />
+@Html.ActionLink("About con la lista", "About", "Home", null, new { atributo = "valor1", @class = "btn btn-default" })
+<br />
+<br />

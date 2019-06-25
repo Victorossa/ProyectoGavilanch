@@ -121,7 +121,11 @@ namespace ProyectoGavilanch.Controllers
             return View(pelicula);
         }
 
-       
+        public ActionResult VistasParciales()
+        {
+            ViewBag.ListaProductos = producto.Listar();
+            return View();
+        }
     }
 }
 

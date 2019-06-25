@@ -201,6 +201,8 @@
     <Content Include="Views\TemaVistas\DropDownEnVista.cshtml" />
     <Content Include="Views\TemaVistas\DropDownDesdeUnEnum.cshtml" />
     <Content Include="Views\TemaVistas\FormularioRazorBeginForm.cshtml" />
+    <Content Include="Views\TemaVistas\VistasParciales.cshtml" />
+    <Content Include="Views\Shared\_ListadoProductos.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
