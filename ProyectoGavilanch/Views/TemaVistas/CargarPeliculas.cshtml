@@ -1,0 +1,50 @@
+﻿@model List<ModeloDatos.Datos.peliculas>
+@{
+    ViewBag.Title = "CargarPeliculas";
+}
+
+<h2>Cargar Peliculas</h2>
+
+<div class="">
+    Mostrando @Model.Count Peliculas
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Titulo</th>
+            <th>Genero</th>
+            <th>En Cartelera</th>
+            <th>Fecha Produccion</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+
+            var claseFila = (!item.EstaEnCartelera) ? "danger" : string.Empty;
+
+            <tr class="@claseFila">
+                <td>
+                    @item.Titulo
+                </td>
+                <td>
+                    @item.Genero
+                </td>
+                <td>
+                    @if (@item.EstaEnCartelera == true)
+                    {
+                        <span>Si</span>
+                    }
+                    else
+                    {
+                        <span>No</span>
+                    }
+                </td>
+                <td>
+                    @item.FechaProduccion
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Dropdown";
+}
+
+<h3>****************************************************</h3>
+<br />
+<label>Dropdown desde Controlador:</label>
+@Html.DropDownList("miDropDownList", (List<SelectListItem>)ViewBag.Listado)
+
+<br />
+
+<br />
+<h3>****************************************************</h3>
+
+@{
+    var listado2 = new List<SelectListItem>
+        () {
+new SelectListItem() {
+Text = "Sí",
+Value = "1"
+},
+new SelectListItem() {
+Text = "No",
+Value = "2",
+Disabled = true
+},
+new SelectListItem() {
+Text = "Quizás",
+Value = "3"
+}
+};
+}
+<br />
+<label>Dropdown con un bloqueo:</label>
+@Html.DropDownList("miDropDownList", listado2)

@@ -16,6 +16,7 @@ namespace ModeloDatos.Datos
         public virtual DbSet<gruposProductos> gruposProductos { get; set; }
         public virtual DbSet<marcas> marcas { get; set; }
         public virtual DbSet<productos> productos { get; set; }
+        public virtual DbSet<peliculas> Peliculas { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

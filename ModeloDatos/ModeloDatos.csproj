@@ -54,8 +54,13 @@
     <Compile Include="Datos\BD_ProyectoGavilanchContext.cs" />
     <Compile Include="Datos\gruposProductos.cs" />
     <Compile Include="Datos\marcas.cs" />
-    <Compile Include="Datos\pelicula.cs" />
+    <Compile Include="Datos\peliculas.cs" />
     <Compile Include="Datos\productos.cs" />
+    <Compile Include="Migrations\201906240353373_Initial.cs" />
+    <Compile Include="Migrations\201906240353373_Initial.Designer.cs">
+      <DependentUpon>201906240353373_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -64,6 +69,10 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201906240353373_Initial.resx">
+      <DependentUpon>201906240353373_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,0 +1,36 @@
+﻿@model List<ModeloDatos.Datos.peliculas>
+@{
+    ViewBag.Title = "CargarPeliculasConRaw";
+}
+
+<h2>Cargar Peliculas Con Raw</h2>
+
+
+<div class="">
+    Mostrando @Model.Count Peliculas
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Titulo</th>
+            <th>Genero</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+
+            var claseFila = (!item.EstaEnCartelera) ? "danger" : string.Empty;
+
+            <tr class="@claseFila">
+                <td>
+                    @Html.Raw(item.Titulo)
+                </td>
+                <td>
+                    @item.Genero
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

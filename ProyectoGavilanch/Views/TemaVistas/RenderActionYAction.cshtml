@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "RenderActionYAction";
+    Layout = null;
+}
+
+<h2>Aqui tenemos 2 Paginas Juntas por Render Action del mismo controlador</h2>
+<h2>*****************************************************************************</h2>
+@{Html.RenderAction("MiAction");}
+<h2>*****************************************************************************</h2>
+@{Html.RenderAction("CargarPeliculas");}
+<h2>*****************************************************************************</h2>
+<h2>Aqui tenemos otra pero de otro controlador</h2>
+<h2>*****************************************************************************</h2>
+@{Html.RenderAction("Contact","Home");}

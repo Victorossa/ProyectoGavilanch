@@ -1,0 +1,31 @@
+﻿@model ModeloDatos.Datos.peliculas
+
+<h4>@ViewBag.Message</h4>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>FormularioRazorBeginForm</title>
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        <div>
+            @Html.LabelFor(Model => Model.Titulo):
+            @Html.EditorFor(Model => Model.Titulo)
+        </div>
+        <div>
+            @Html.LabelFor(Model => Model.EstaEnCartelera):
+            @Html.EditorFor(Model => Model.EstaEnCartelera)
+        </div>
+        <div>
+            @Html.LabelFor(Model => Model.Genero):
+            @Html.EditorFor(Model => Model.Genero)
+        </div>
+        <div>
+            @Html.LabelFor(Model => Model.FechaProduccion):
+            @Html.EditorFor(Model => Model.FechaProduccion)
+        </div>
+        <input type="submit" value="Enviar"/>
+    }
+</body>
+</html>

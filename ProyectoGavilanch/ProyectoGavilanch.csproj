@@ -139,6 +139,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ResultadoOperacion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -189,10 +190,21 @@
     <Content Include="Views\productos\Index.cshtml" />
     <Content Include="Views\TemaVistas\MiAction.cshtml" />
     <Content Include="Views\TemaVistas\CargaLista.cshtml" />
+    <Content Include="Views\TemaVistas\CargarPeliculas.cshtml" />
+    <Content Include="Views\TemaVistas\CargarPeliculasConRaw.cshtml" />
+    <Content Include="Views\TemaVistas\RenderActionYAction.cshtml" />
+    <Content Include="Views\TemaVistas\DisplayYDisplayTemplates.cshtml" />
+    <Content Include="Views\TemaVistas\DisplayTemplates\Boolean.cshtml" />
+    <Content Include="Views\TemaVistas\DisplayTemplates\DateTime.cshtml" />
+    <Content Include="Views\TemaVistas\DisplayTemplates\Peliculas.cshtml" />
+    <Content Include="Views\TemaVistas\EditorTemplates.cshtml" />
+    <Content Include="Views\TemaVistas\DropDownEnVista.cshtml" />
+    <Content Include="Views\TemaVistas\DropDownDesdeUnEnum.cshtml" />
+    <Content Include="Views\TemaVistas\FormularioRazorBeginForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
+    <Folder Include="DAL\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

@@ -3,5 +3,17 @@
     ViewBag.Title = "MiAction";
 }
 
-<h2>MiAction</h2>
+<h2>Mi Action</h2>
+
+@Html.ActionLink("Del mismo Controlador: Cargar lista", "CargaLista")
+<br />
+<br />
+@Html.ActionLink("De Otro Controlador: About", "About", "Home")
+<br />
+<br />
+@Html.ActionLink("Como un Boton", "About", "Home", null, new { atributo = "valor1", @class = "btn btn-danger" })
+<br />
+<br />
+<h4>Manda dos parametros al controlador </h4>
+@Html.ActionLink("Enviar", "QueryString", "Acciones", new { nombre = "Victor", edad = 43 }, new { atributo = "1000", @class = "btn btn-success" })
 
