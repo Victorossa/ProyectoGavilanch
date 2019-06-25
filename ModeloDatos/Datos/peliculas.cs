@@ -11,12 +11,17 @@ namespace ModeloDatos.Datos
     {
         [Key]
         public int Pelicula_Id { get; set; }
+        [Required]
         public string Titulo { get; set; }
         public bool EstaEnCartelera { get; set; }
+        [Required]
         public string Genero { get; set; }
-        public DateTime FechaProduccion { get; set; }
-
-
+        [Required(ErrorMessage = "{0} es Requerido")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        [Display(Name = "Fecha Produccion")]
+        public Nullable<System.DateTime> FechaProduccion { get; set; }
+        public int CodigoParPelicula { get; set; }
         public List<peliculas> ListarPeliculas()
         {
             var peliculas = new List<peliculas>();

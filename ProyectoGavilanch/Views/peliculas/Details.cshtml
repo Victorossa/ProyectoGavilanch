@@ -1,0 +1,58 @@
+﻿@model ModeloDatos.Datos.peliculas
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>peliculas</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Titulo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Titulo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EstaEnCartelera)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EstaEnCartelera)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Genero)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Genero)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaProduccion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaProduccion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CodigoParPelicula)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodigoParPelicula)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Pelicula_Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

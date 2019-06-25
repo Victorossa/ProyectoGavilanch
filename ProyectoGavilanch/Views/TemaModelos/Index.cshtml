@@ -1,0 +1,75 @@
+﻿@model ModeloDatos.Datos.productos
+
+<h2>Simulacion para entender Create</h2>
+
+<h2 class="text-left">Contratos</h2>
+<p class="text-left">
+    @Html.ActionLink("Crear Nuevo", "Create", null, new { @class = "btn btn-default btn-large" })
+</p>
+
+<table class="table">
+    <tr>
+        <th class="head-table">
+            @Html.LabelFor(model => model.Nombre, htmlAttributes: new { @class = "control-label col-md-2" })
+        </th>
+        <th class="head-table">
+            @Html.LabelFor(model => model.Descripcion, htmlAttributes: new { @class = "control-label col-md-2" })
+        </th>
+        <th class="head-table">
+            @Html.LabelFor(model => model.Imagen, htmlAttributes: new { @class = "control-label col-md-2" })
+        </th>
+        <th class="head-table">
+            @Html.LabelFor(model => model.Precio, htmlAttributes: new { @class = "control-label col-md-2" })
+        </th>
+    </tr>
+    <tr>
+        <th class="head-table">
+            @Html.LabelFor(model => model.Nombre, htmlAttributes: new { @class = "control-label col-md-2" })
+        </th>
+        <th class="head-table">
+            @Html.LabelFor(model => model.Descripcion, htmlAttributes: new { @class = "control-label col-md-2" })
+        </th>
+        <th class="head-table">
+            @Html.LabelFor(model => model.Imagen, htmlAttributes: new { @class = "control-label col-md-2" })
+        </th>
+        <th class="head-table">
+            @Html.LabelFor(model => model.Precio, htmlAttributes: new { @class = "control-label col-md-2" })
+        </th>
+    </tr>
+    <tr>
+        <td class="border-cell">
+            @Html.EditorFor(model => model.Nombre, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "text-danger" })
+        </td>
+        <td class="border-cell">
+            @Html.EditorFor(model => model.Descripcion, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Descripcion, "", new { @class = "text-danger" })
+        </td>
+        <td class="border-cell">
+            @Html.EditorFor(model => model.Imagen, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Imagen, "", new { @class = "text-danger" })
+        </td>
+        <td class="border-cell">
+            @Html.EditorFor(model => model.Precio, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Precio, "", new { @class = "text-danger" })
+        </td>
+    </tr>
+    <tr>
+        <td class="border-cell">
+            @Html.EditorFor(model => model.Nombre, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "text-danger" })
+        </td>
+        <td class="border-cell">
+            @Html.EditorFor(model => model.Descripcion, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Descripcion, "", new { @class = "text-danger" })
+        </td>
+        <td class="border-cell">
+            @Html.EditorFor(model => model.Imagen, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Imagen, "", new { @class = "text-danger" })
+        </td>
+        <td class="border-cell">
+            @Html.EditorFor(model => model.Precio, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Precio, "", new { @class = "text-danger" })
+        </td>
+    </tr>
+</table>

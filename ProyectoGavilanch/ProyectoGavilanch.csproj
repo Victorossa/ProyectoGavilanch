@@ -134,7 +134,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccionesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\peliculasController.cs" />
     <Compile Include="Controllers\productosController.cs" />
+    <Compile Include="Controllers\TemaModelosController.cs" />
     <Compile Include="Controllers\TemaVistasController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -203,6 +205,12 @@
     <Content Include="Views\TemaVistas\FormularioRazorBeginForm.cshtml" />
     <Content Include="Views\TemaVistas\VistasParciales.cshtml" />
     <Content Include="Views\Shared\_ListadoProductos.cshtml" />
+    <Content Include="Views\TemaModelos\Index.cshtml" />
+    <Content Include="Views\peliculas\Create.cshtml" />
+    <Content Include="Views\peliculas\Delete.cshtml" />
+    <Content Include="Views\peliculas\Details.cshtml" />
+    <Content Include="Views\peliculas\Edit.cshtml" />
+    <Content Include="Views\peliculas\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
