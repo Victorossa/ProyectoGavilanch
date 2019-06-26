@@ -7,7 +7,7 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Nuevo", "Create", "Peliculas", new { atributo = "1000", @class = "btn btn-success" })
+    @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
     <tr>
@@ -25,6 +25,12 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.CodigoParPelicula)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.valorBase)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.valorMaxima)
         </th>
         <th></th>
     </tr>
@@ -47,20 +53,19 @@
             @Html.DisplayFor(modelItem => item.CodigoParPelicula)
         </td>
         <td>
-        <td class="text-right">
-
-            <a class="btn btn-default" href="~/Peliculas/Edit/@item.Pelicula_Id" title="Editar">
-                <i class="glyphicon glyphicon-pencil"></i>
-            </a>
-            <a class="btn btn-success" href="~/Peliculas/Details/@item.Pelicula_Id" title="Detalles">
-                <i class="glyphicon glyphicon-eye-open"></i>
-            </a>
-            <a class="btn btn-danger" href="~/Peliculas/Delete/@item.Pelicula_Id" title="Eliminar">
-                <i class="glyphicon glyphicon-remove"></i>
-            </a>
+            @Html.DisplayFor(modelItem => item.valorBase)
         </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.valorMaxima)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Pelicula_Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Pelicula_Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Pelicula_Id })
         </td>
     </tr>
 }
+    
+    
 
 </table>

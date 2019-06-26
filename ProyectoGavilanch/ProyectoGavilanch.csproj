@@ -143,6 +143,16 @@
     </Compile>
     <Compile Include="Models\ResultadoOperacion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Recursos\Recurso.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Recurso.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Recursos\Recurso.en-US.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Recurso.en-US.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -205,12 +215,13 @@
     <Content Include="Views\TemaVistas\FormularioRazorBeginForm.cshtml" />
     <Content Include="Views\TemaVistas\VistasParciales.cshtml" />
     <Content Include="Views\Shared\_ListadoProductos.cshtml" />
-    <Content Include="Views\TemaModelos\Index.cshtml" />
     <Content Include="Views\peliculas\Create.cshtml" />
     <Content Include="Views\peliculas\Delete.cshtml" />
     <Content Include="Views\peliculas\Details.cshtml" />
     <Content Include="Views\peliculas\Edit.cshtml" />
     <Content Include="Views\peliculas\Index.cshtml" />
+    <Content Include="Views\TemaModelos\Index.cshtml" />
+    <Content Include="Views\TemaModelos\Index2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -234,6 +245,17 @@
       <Project>{435a769d-0d06-4fde-ab22-28f78b298216}</Project>
       <Name>ModeloDatos</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Recursos\Recurso.en-US.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Recurso.en-US.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Recursos</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Recursos\Recurso.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Recurso.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

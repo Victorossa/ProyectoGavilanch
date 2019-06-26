@@ -46,7 +46,7 @@ namespace ProyectoGavilanch.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Pelicula_Id,Titulo,EstaEnCartelera,Genero,FechaProduccion,CodigoParPelicula")] peliculas peliculas)
+        public ActionResult Create([Bind(Include = "Pelicula_Id,Titulo,EstaEnCartelera,Genero,FechaProduccion,CodigoParPelicula,valorBase,valorMaxima")] peliculas peliculas)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace ProyectoGavilanch.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Pelicula_Id,Titulo,EstaEnCartelera,Genero,FechaProduccion,CodigoParPelicula")] peliculas peliculas)
+        public ActionResult Edit([Bind(Include = "Pelicula_Id,Titulo,EstaEnCartelera,Genero,FechaProduccion,CodigoParPelicula,valorBase,valorMaxima")] peliculas peliculas)
         {
             if (ModelState.IsValid)
             {
