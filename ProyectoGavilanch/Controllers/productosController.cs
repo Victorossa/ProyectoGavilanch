@@ -13,7 +13,7 @@ namespace ProyectoGavilanch.Controllers
     public class productosController : Controller
     {
         private BD_ProyectoGavilanchContext db = new BD_ProyectoGavilanchContext();
-
+        private Persona persona = new Persona();
         // GET: productos
         public ActionResult Index()
         {
@@ -131,6 +131,16 @@ namespace ProyectoGavilanch.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        public ActionResult PruebaPropiedadesNavegacion()
+        {
+            //var persona = db.Persona.Include("Direccion").FirstOrDefault()
+
+
+
+            var productos = db.productos.Include(p => p.gruposProductos).Include(p => p.marcas);
+            return View(productos.ToList());
         }
     }
 }

@@ -10,107 +10,107 @@ using ModeloDatos.Datos;
 
 namespace ProyectoGavilanch.Controllers
 {
-    public class peliculasController : Controller
+    public class DireccionsController : Controller
     {
         private BD_ProyectoGavilanchContext db = new BD_ProyectoGavilanchContext();
 
-        // GET: peliculas
+        // GET: Direccions
         public ActionResult Index()
         {
-            return View(db.Peliculas.ToList());
+            return View(db.Direccions.ToList());
         }
 
-        // GET: peliculas/Details/5
+        // GET: Direccions/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            peliculas peliculas = db.Peliculas.Find(id);
-            if (peliculas == null)
+            Direccion direccion = db.Direccions.Find(id);
+            if (direccion == null)
             {
                 return HttpNotFound();
             }
-            return View(peliculas);
+            return View(direccion);
         }
 
-        // GET: peliculas/Create
+        // GET: Direccions/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: peliculas/Create
+        // POST: Direccions/Create
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Pelicula_Id,Titulo,EstaEnCartelera,Genero,FechaProduccion,CodigoParPelicula,valorBase,valorMaxima")] peliculas peliculas)
+        public ActionResult Create([Bind(Include = "Direccion_Id,ReferenciaDireccion")] Direccion direccion)
         {
             if (ModelState.IsValid)
             {
-                db.Peliculas.Add(peliculas);
+                db.Direccions.Add(direccion);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(peliculas);
+            return View(direccion);
         }
 
-        // GET: peliculas/Edit/5
+        // GET: Direccions/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            peliculas peliculas = db.Peliculas.Find(id);
-            if (peliculas == null)
+            Direccion direccion = db.Direccions.Find(id);
+            if (direccion == null)
             {
                 return HttpNotFound();
             }
-            return View(peliculas);
+            return View(direccion);
         }
 
-        // POST: peliculas/Edit/5
+        // POST: Direccions/Edit/5
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Pelicula_Id,Titulo,EstaEnCartelera,Genero,FechaProduccion,CodigoParPelicula,valorBase,valorMaxima")] peliculas peliculas)
+        public ActionResult Edit([Bind(Include = "Direccion_Id,ReferenciaDireccion")] Direccion direccion)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(peliculas).State = EntityState.Modified;
+                db.Entry(direccion).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(peliculas);
+            return View(direccion);
         }
 
-        // GET: peliculas/Delete/5
+        // GET: Direccions/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            peliculas peliculas = db.Peliculas.Find(id);
-            if (peliculas == null)
+            Direccion direccion = db.Direccions.Find(id);
+            if (direccion == null)
             {
                 return HttpNotFound();
             }
-            return View(peliculas);
+            return View(direccion);
         }
 
-        // POST: peliculas/Delete/5
+        // POST: Direccions/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            peliculas peliculas = db.Peliculas.Find(id);
-            db.Peliculas.Remove(peliculas);
+            Direccion direccion = db.Direccions.Find(id);
+            db.Direccions.Remove(direccion);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
@@ -123,23 +123,5 @@ namespace ProyectoGavilanch.Controllers
             }
             base.Dispose(disposing);
         }
-
-
-        public ActionResult SeleccionColumnas()
-        {
-            //seleccionando todas las columnas
-            var listarTodas = db.Peliculas.ToList();
-            //seleccionando todas las con condicional
-            var listarTodasWhere = db.Peliculas.Where(x => x.CodigoParPelicula > 5).ToList();
-            //seleccionando una columna
-            ViewBag.ListarTitulos = db.Peliculas.Select(x => x.Titulo).ToList();
-            //Seleccionando varias columnas y proyectandolas a un tipo anonimo
-            var ListadoPelicularVariosColumnaAnomimo = db.Peliculas.Select(x => new { Titulo = x.Titulo, Genero = x.Genero }).ToList();
-            //Seleccionando varias columnas y proyectandolas hacia Pelicula
-            var ListadoPeliculasVariasColumnas = db.Peliculas.Select(x => new { Titulo = x.Titulo, Genero = x.Genero }).ToList().Select(x => new peliculas() { Titulo = x.Titulo, Genero = x.Genero }).ToList();
-
-            return View();
-        }
-
     }
 }

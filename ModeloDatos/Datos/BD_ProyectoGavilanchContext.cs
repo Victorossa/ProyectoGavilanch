@@ -17,6 +17,10 @@ namespace ModeloDatos.Datos
         public virtual DbSet<marcas> marcas { get; set; }
         public virtual DbSet<productos> productos { get; set; }
         public virtual DbSet<peliculas> Peliculas { get; set; }
+        //public virtual DbSet<Persona> Personas { get; set; }
+        //public virtual DbSet<Direccion> Direccions { get; set; }
+
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -56,6 +60,13 @@ namespace ModeloDatos.Datos
             modelBuilder.Entity<productos>()
                 .Property(e => e.Precio)
                 .HasPrecision(18, 0);
+
+            modelBuilder.Entity<Direccion>().HasRequired(e => e.Persona);
+
         }
+
+        public System.Data.Entity.DbSet<ModeloDatos.Datos.Direccion> Direccions { get; set; }
+
+        public System.Data.Entity.DbSet<ModeloDatos.Datos.Persona> Personas { get; set; }
     }
 }

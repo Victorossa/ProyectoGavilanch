@@ -133,8 +133,10 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccionesController.cs" />
+    <Compile Include="Controllers\DireccionsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\peliculasController.cs" />
+    <Compile Include="Controllers\PersonasController.cs" />
     <Compile Include="Controllers\productosController.cs" />
     <Compile Include="Controllers\TemaModelosController.cs" />
     <Compile Include="Controllers\TemaVistasController.cs" />
@@ -222,6 +224,20 @@
     <Content Include="Views\peliculas\Index.cshtml" />
     <Content Include="Views\TemaModelos\Index.cshtml" />
     <Content Include="Views\TemaModelos\Index2.cshtml" />
+    <Content Include="Views\peliculas\Index2.cshtml" />
+    <Content Include="Views\productos\PruebaPropiedadesNavegacion.cshtml" />
+    <Content Include="Views\peliculas\SeleccionColumnas.cshtml" />
+    <Content Include="Views\Direccions\Create.cshtml" />
+    <Content Include="Views\Direccions\Delete.cshtml" />
+    <Content Include="Views\Direccions\Details.cshtml" />
+    <Content Include="Views\Direccions\Edit.cshtml" />
+    <Content Include="Views\Direccions\Index.cshtml" />
+    <Content Include="Views\Personas\Create.cshtml" />
+    <Content Include="Views\Personas\Delete.cshtml" />
+    <Content Include="Views\Personas\Details.cshtml" />
+    <Content Include="Views\Personas\Edit.cshtml" />
+    <Content Include="Views\Personas\Index.cshtml" />
+    <Content Include="Views\Personas\LLavesForaneasYpropiedadesDeNavegacion.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -275,7 +291,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>63650</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:63650/</IISUrl>
+          <IISUrl>http://localhost:8080/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

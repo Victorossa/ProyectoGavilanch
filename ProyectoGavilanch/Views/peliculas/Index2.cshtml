@@ -1,0 +1,54 @@
+﻿@model List<ModeloDatos.Datos.peliculas>
+
+<h2>Peliculas</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th style="width:150px">Titulo</th>
+            <th style="width:150px">Esta en Cartelera</th>
+            <th style="width:150px">Genero</th>
+            <th style="width:200px">FechaProduccion</th>
+            <th style="width:100px">CodigoPar</th>
+            <th style="width:100px">ValorBase</th>
+            <th style="width:180px">Valor Maximo</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var p in Model)
+        {
+            <tr>
+                <td>@p.Titulo</td>
+                <td>@p.EstaEnCartelera</td>
+                <td>@p.Genero</td>
+                <td>@p.FechaProduccion</td>
+                <td>@p.CodigoParPelicula</td>
+                <td>@p.valorBase</td>
+                <td>@p.valorMaxima</td>
+
+                <td class="text-right">
+                    <a class="btn btn-default" href="~/Personas/Edit/@p.Pelicula_Id" title="Editar">
+                        <i class="glyphicon glyphicon-pencil"></i>
+                    </a>
+                    <a class="btn btn-success" href="~/Personas/Details/@p.Pelicula_Id" title="Detalles">
+                        <i class="glyphicon glyphicon-eye-open"></i>
+                    </a>
+                    <a class="btn btn-danger" href="~/Personas/Delete/@p.Pelicula_Id" title="Eliminar">
+                        <i class="glyphicon glyphicon-remove"></i>
+                    </a>
+
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+
+
+@*<div class="form-horizontal">
+    <div class="col-md-12" style="margin-top: 20px">
+        @Html.DropDownList("ListarTitulos", (List<SelectListItem>)ViewBag.ListarTitulos, new { id = "ddlLocations" , @class ="form-control"})
+</div>
+</div>*@
+
+

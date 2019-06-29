@@ -53,9 +53,11 @@
   <ItemGroup>
     <Compile Include="Datos\almacenes.cs" />
     <Compile Include="Datos\BD_ProyectoGavilanchContext.cs" />
+    <Compile Include="Datos\Direccion.cs" />
     <Compile Include="Datos\gruposProductos.cs" />
     <Compile Include="Datos\marcas.cs" />
     <Compile Include="Datos\peliculas.cs" />
+    <Compile Include="Datos\Persona.cs" />
     <Compile Include="Datos\productos.cs" />
     <Compile Include="Datos\Validaciones\DivisibleEntreAtribute.cs" />
     <Compile Include="Migrations\201906240353373_Initial.cs" />

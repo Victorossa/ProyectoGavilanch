@@ -10,6 +10,7 @@ namespace ModeloDatos.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
+            //AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(ModeloDatos.Datos.BD_ProyectoGavilanchContext context)

@@ -10,107 +10,107 @@ using ModeloDatos.Datos;
 
 namespace ProyectoGavilanch.Controllers
 {
-    public class peliculasController : Controller
+    public class PersonasController : Controller
     {
         private BD_ProyectoGavilanchContext db = new BD_ProyectoGavilanchContext();
 
-        // GET: peliculas
+        // GET: Personas
         public ActionResult Index()
         {
-            return View(db.Peliculas.ToList());
+            return View(db.Personas.ToList());
         }
 
-        // GET: peliculas/Details/5
+        // GET: Personas/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            peliculas peliculas = db.Peliculas.Find(id);
-            if (peliculas == null)
+            Persona persona = db.Personas.Find(id);
+            if (persona == null)
             {
                 return HttpNotFound();
             }
-            return View(peliculas);
+            return View(persona);
         }
 
-        // GET: peliculas/Create
+        // GET: Personas/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: peliculas/Create
+        // POST: Personas/Create
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Pelicula_Id,Titulo,EstaEnCartelera,Genero,FechaProduccion,CodigoParPelicula,valorBase,valorMaxima")] peliculas peliculas)
+        public ActionResult Create([Bind(Include = "Persona_Id,Nombre,Nacimiento,Edad")] Persona persona)
         {
             if (ModelState.IsValid)
             {
-                db.Peliculas.Add(peliculas);
+                db.Personas.Add(persona);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(peliculas);
+            return View(persona);
         }
 
-        // GET: peliculas/Edit/5
+        // GET: Personas/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            peliculas peliculas = db.Peliculas.Find(id);
-            if (peliculas == null)
+            Persona persona = db.Personas.Find(id);
+            if (persona == null)
             {
                 return HttpNotFound();
             }
-            return View(peliculas);
+            return View(persona);
         }
 
-        // POST: peliculas/Edit/5
+        // POST: Personas/Edit/5
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Pelicula_Id,Titulo,EstaEnCartelera,Genero,FechaProduccion,CodigoParPelicula,valorBase,valorMaxima")] peliculas peliculas)
+        public ActionResult Edit([Bind(Include = "Persona_Id,Nombre,Nacimiento,Edad")] Persona persona)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(peliculas).State = EntityState.Modified;
+                db.Entry(persona).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(peliculas);
+            return View(persona);
         }
 
-        // GET: peliculas/Delete/5
+        // GET: Personas/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            peliculas peliculas = db.Peliculas.Find(id);
-            if (peliculas == null)
+            Persona persona = db.Personas.Find(id);
+            if (persona == null)
             {
                 return HttpNotFound();
             }
-            return View(peliculas);
+            return View(persona);
         }
 
-        // POST: peliculas/Delete/5
+        // POST: Personas/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            peliculas peliculas = db.Peliculas.Find(id);
-            db.Peliculas.Remove(peliculas);
+            Persona persona = db.Personas.Find(id);
+            db.Personas.Remove(persona);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
@@ -124,22 +124,23 @@ namespace ProyectoGavilanch.Controllers
             base.Dispose(disposing);
         }
 
-
-        public ActionResult SeleccionColumnas()
+        public ActionResult LLavesForaneasYpropiedadesDeNavegacion()
         {
-            //seleccionando todas las columnas
-            var listarTodas = db.Peliculas.ToList();
-            //seleccionando todas las con condicional
-            var listarTodasWhere = db.Peliculas.Where(x => x.CodigoParPelicula > 5).ToList();
-            //seleccionando una columna
-            ViewBag.ListarTitulos = db.Peliculas.Select(x => x.Titulo).ToList();
-            //Seleccionando varias columnas y proyectandolas a un tipo anonimo
-            var ListadoPelicularVariosColumnaAnomimo = db.Peliculas.Select(x => new { Titulo = x.Titulo, Genero = x.Genero }).ToList();
-            //Seleccionando varias columnas y proyectandolas hacia Pelicula
-            var ListadoPeliculasVariasColumnas = db.Peliculas.Select(x => new { Titulo = x.Titulo, Genero = x.Genero }).ToList().Select(x => new peliculas() { Titulo = x.Titulo, Genero = x.Genero }).ToList();
 
+            //se crea una variable y se invoca la entidad por ef, y en la consulta se incluye la tabla de la clave foranea 
+            var persona = db.Personas.Include("Direcciones").FirstOrDefault(x => x.Persona_Id == 1);
+            //Se puede optener la Direccion a partir de persona
+            var direcciones = persona.Direcciones;
+            //Se puede optener la direccion a partir de la persona
+            var direccion = db.Direccions.FirstOrDefault(x => x.Direccion_Id == 2);
+            var nombre = direccion.Persona.Nombre;
             return View();
         }
 
+        public ActionResult InnerJoinJoinGroupJoin()
+        {
+            var personaDireccion = db.Personas.Join(db.Personas,)
+            return View();
+        }
     }
 }

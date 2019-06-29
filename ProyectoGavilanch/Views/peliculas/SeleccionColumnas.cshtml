@@ -1,0 +1,33 @@
+﻿
+<h2>EF Selección de Columnas</h2>
+<h3>Poner punto de Interrupción y evaluar la entrega de los datos</h3>
+<h4>Crear primero el contexto de la base de datos lo llamamos <strong>db</strong></h4>
+<br />
+private BD_ProyectoGavilanchContext db = new BD_ProyectoGavilanchContext();
+<br />
+****************************************************************************
+<br />
+//seleccionando todas las columnas <br />
+    var listarTodas = db.Peliculas.ToList();
+<br />
+<br />
+    //seleccionando todas las con condicional<br />
+    var listarTodasWhere = db.Peliculas.Where(x => x.CodigoParPelicula >5).ToList();
+<br />
+<br />
+    //seleccionando una columna<br />
+    ViewBag.ListarTitulos = db.Peliculas.Select(x => x.Titulo).ToList();
+<br />
+<br />
+    //Seleccionando varias columnas y proyectandolas a un tipo anonimo<br />
+    var ListadoPelicularVariosColumnaAnomimo = db.Peliculas.Select(x => new { Titulo = x.Titulo, Genero = x.Genero}).ToList();
+<br />
+<br />
+    //Seleccionando varias columnas y proyectandolas hacia Pelicula<br />
+    var ListadoPeliculasVariasColumnas = db.Peliculas.Select(x => new { Titulo = x.Titulo, Genero = x.Genero }).ToList().Select(x => new peliculas() { Titulo = x.Titulo, Genero = x.Genero }).ToList();
+
+<h4>En el controlador</h4>
+Se crea una instancia de la conexion
+private BD_ProyectoGavilanchContext db = new BD_ProyectoGavilanchContext();
+
+Y ESO ES TODO... SOLO CON EL db.Peliculas traemos todo lo que necesitamos
